@@ -1,0 +1,17 @@
+<!-- There Are of 3 types of Binding -->
+<h1>Hello Welcome to {{ hotelName }}</h1>
+
+<!-- this is interpolation bonding -->
+<div [hidden]="hideRooms">
+  <span>There Are </span>
+  <span [innerText]="totalRooms"></span>
+  <!-- this is propperty binding -->
+  <span> Rooms Available</span>
+</div>
+
+<div *ngIf="rooms.id === 1" style="background-color: aquamarine">
+  <app-rooms-list [rooms]="roomsList"></app-rooms-list>
+</div>
+
+<button (click)="toggle()" class="btn btn-success">Toggle me</button>
+<!-- This is evnet Binding -->

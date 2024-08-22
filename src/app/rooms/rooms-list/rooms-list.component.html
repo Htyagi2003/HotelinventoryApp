@@ -1,0 +1,25 @@
+Rooms List
+<div>
+  <table class="table">
+    <tr>
+      <th>Even/odd</th>
+      <th>Index</th>
+      <th>Room Type</th>
+      <th>Ameneties</th>
+      <th>price</th>
+      <th>CheckinTime</th>
+    </tr>
+    <tr
+      *ngFor="let item of rooms; let e = even; let o = odd; let i = index"
+      [ngClass]="e ? 'even' : 'odd'"
+    >
+      <td>{{ e ? "even" : "odd" }}</td>
+      <td>{{ i }}</td>
+      <td>{{ item.roomtype }}</td>
+      <td>{{ item.ameneties | uppercase }}</td>
+      <td>{{ item.price | currency : "INR" }}</td>
+      <!-- This is currency Pipeline -->
+      <td>{{ item.checkinTime }}</td>
+    </tr>
+  </table>
+</div>
